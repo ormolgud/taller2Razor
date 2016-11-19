@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="proyectounoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbRol">
+    <Key>
+      <PropertyRef Name="IdRol" />
+    </Key>
+    <Property Name="IdRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tbUsuario" Relationship="Self.FK__tbUsuario__RolUs__25869641" FromRole="tbRol" ToRole="tbUsuario" />
+  </EntityType>
+  <EntityType Name="tbUsuario">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RolUsuario" Type="Int32" />
+    <NavigationProperty Name="tbRol" Relationship="Self.FK__tbUsuario__RolUs__25869641" FromRole="tbUsuario" ToRole="tbRol" />
+  </EntityType>
+  <Association Name="FK__tbUsuario__RolUs__25869641">
+    <End Role="tbRol" Type="Self.tbRol" Multiplicity="0..1" />
+    <End Role="tbUsuario" Type="Self.tbUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbRol">
+        <PropertyRef Name="IdRol" />
+      </Principal>
+      <Dependent Role="tbUsuario">
+        <PropertyRef Name="RolUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="proyectounoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbRol" EntityType="Self.tbRol" />
+    <EntitySet Name="tbUsuario" EntityType="Self.tbUsuario" />
+    <AssociationSet Name="FK__tbUsuario__RolUs__25869641" Association="Self.FK__tbUsuario__RolUs__25869641">
+      <End Role="tbRol" EntitySet="tbRol" />
+      <End Role="tbUsuario" EntitySet="tbUsuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

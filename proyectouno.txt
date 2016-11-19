@@ -1,0 +1,29 @@
+--CREATE DATABASE proyectouno
+
+--USE proyectouno
+
+--CREATE TABLE tbRol(
+--	idRol INT NOT NULL PRIMARY KEY IDENTITY,
+--	nombreRol NVARCHAR(50) NOT NULL
+--)
+
+--CREATE TABLE tbUsuario(
+--	idUsuario INT NOT NULL PRIMARY KEY IDENTITY,
+--	nombreUsuario NVARCHAR(50) NOT NULL,
+--	email NVARCHAR(200) NOT NULL,
+--	rolUsuario INT NOT NULL FOREIGN KEY REFERENCES tbRol(idRol)
+--)
+
+--INSERT INTO tbRol (nombreRol) VALUES ('Administrador')
+--INSERT INTO tbRol (nombreRol) VALUES ('Usuario')
+
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Juan','juan@micorreo.com',1)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Ana','ana@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Maria','maria@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Carlos','carlos@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Daniel','daniel@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('David','david@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Duvan','duvan@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Camila','camila@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Angela','angela@micorreo.com',2)
+--INSERT INTO tbUsuario (nombreUsuario,email,rolUsuario) VALUES ('Manuela','manuela@micorreo.com',2)

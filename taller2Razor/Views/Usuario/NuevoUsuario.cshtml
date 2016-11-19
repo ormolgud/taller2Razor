@@ -1,0 +1,29 @@
+﻿@model  IEnumerable<taller2Razor.Models.tbRol>
+
+@{
+    ViewBag.Title = "NuevoUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NuevoUsuario</h2>
+<div id="CrearNuevoUsuario">
+    @using (Html.BeginForm("CrearNuevoUsuario","UsuarioController",FormMethod.Post))
+    {
+        <label>Rol</label>
+        <select id="SeleccionarRol" name="SeleccionarRol">
+            @foreach(var r in Model)
+            {
+                <option id="idRol" value="@r.IdRol">@r.NombreRol</option>
+            }
+        </select>
+        <br />
+        <lable>nombre:</lable>
+        <input name="NombreUsuario" type="text" />
+        <br />
+        <lable>Email:</lable>
+        <input name="Email" type="text" />
+        <br />
+        <input type="submit" id="BotonOK" value="Guardar Usuario" />
+    }
+</div>
+

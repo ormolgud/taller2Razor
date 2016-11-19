@@ -1,0 +1,52 @@
+﻿@model IEnumerable<taller2Razor.Models.tbUsuario>
+
+@{
+    ViewBag.Title = "InsertarUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Insertar Nuevo Usuario</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo Usuario", "NuevoUsuario")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           ID
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+           Rol
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreUsuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbRol.NombreRol)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
